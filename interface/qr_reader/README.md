@@ -1,4 +1,4 @@
-# qr_reader
+# Interface
 
 ## Project setup
 ```
@@ -15,5 +15,7 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**!!! IMPORTANT !!!**
+
+After the compilation pathes in the `qr-reader.php` should be updated
+

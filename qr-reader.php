@@ -24,8 +24,9 @@ add_action('admin_menu', 'qr_reader_admin_actions');
 function settings_js()
 {
     $btn_text =  get_option('qr_reader_btn_text');
-    $error_text = "Данный RQ код не является ссылкой";
-    $redirect_text = "Перейти";
+    $error_text = get_option('qr_reader_error_text');
+    $redirect_text = get_option('qr_reader_redirect_text');
+
     $js_text = 'const settings = {
         "btn_text": "' . $btn_text . '",
         "error": "' . $error_text . '",

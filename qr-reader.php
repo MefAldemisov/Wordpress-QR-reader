@@ -59,7 +59,7 @@ function func_wp_vue()
     <script src=' . $js_settings_src . '></script>
     <script src=' . $vendor_src . '></script>
     <script src=' . $js_src . '></script>
-  <div id="app"></div>';
+  <div id="app" style="margin-bottom:1.5rem;"></div>';
 
     //Return to display
     return $str;

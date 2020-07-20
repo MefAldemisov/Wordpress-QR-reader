@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button @click="unhide">{{text}}</button>
+        <button @click="upAction">{{show ? "X":text}}</button>
         <div v-if="show">
-            <button @click="resetAll">X</button>
+            <!-- <button @click="resetAll">X</button> -->
             <div v-if="val">
                 <div v-if="error" class="error" @click="reset">{{error}}</div>
                 <p>
@@ -56,7 +56,6 @@ export default {
             this.val = decodedString;
         },
         redirect() {
-            console.log(this.val.search("http"));
             if (this.val.search("http") >= 0) {
                 window.location.href = this.val;
             } else {
@@ -70,6 +69,13 @@ export default {
         resetAll() {
             this.reset();
             this.show = false;
+        },
+        upAction() {
+            if (!this.show) {
+                this.unhide();
+            } else {
+                this.resetAll();
+            }
         }
     }
 };

@@ -82,7 +82,7 @@ export default {
 </script>
 <style scoped>
 div.limited {
-    max-width: 300px;
+    max-width: 80%;
     max-height: 300px;
     border: 2px solid black;
 }

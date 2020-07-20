@@ -1,14 +1,9 @@
 <template>
     <div>
-        <button @click="upAction">{{show ? "X":text}}</button>
+        <button v-if="!val" @click="upAction">{{show ? "X":text}}</button>
         <div v-if="show">
-            <!-- <button @click="resetAll">X</button> -->
             <div v-if="val">
                 <div v-if="error" class="error" @click="reset">{{error}}</div>
-                <p>
-                    <span>Результат:</span>
-                    {{val}}
-                </p>
                 <button v-if="!error" @click="redirect">{{redirect_text}}</button>
             </div>
             <div v-else class="limited">

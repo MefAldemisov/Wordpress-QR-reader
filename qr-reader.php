@@ -46,7 +46,7 @@ function func_wp_vue()
     settings_js();
     $js_settings_src =  plugin_dir_url(__FILE__) . '/settings.js';
     $vendor_src = plugin_dir_url(__FILE__) . './interface/qr_reader/dist/js/chunk-vendors.b52e927d.js';
-    $js_src = plugin_dir_url(__FILE__) . './interface/qr_reader/dist/js/app.68ccff35.js';
+    $js_src = plugin_dir_url(__FILE__) . './interface/qr_reader/dist/js/app.09111742.js';
 
     wp_enqueue_script('js_settings', $js_settings_src);
     //Add Vue.js

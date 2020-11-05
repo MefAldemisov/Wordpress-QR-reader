@@ -1,8 +1,9 @@
 <template>
     <div>
         <button v-if="!val" @click="upAction">{{ show ? "X" : text }}</button>
-        <div>Если QR код не считывается, попробуйте обновить страницу</div>
         <div v-if="show">
+            <div>Если QR код не считывается, попробуйте обновить страницу</div>
+
             <div v-if="val">
                 <div v-if="error" class="error" @click="reset">{{ error }}</div>
                 <button v-if="!error" @click="redirect">

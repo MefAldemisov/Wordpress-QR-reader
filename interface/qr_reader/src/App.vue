@@ -1,10 +1,13 @@
 <template>
     <div>
-        <button v-if="!val" @click="upAction">{{show ? "X":text}}</button>
+        <button v-if="!val" @click="upAction">{{ show ? "X" : text }}</button>
+        <div>Если QR код не считывается, попробуйте обновить страницу</div>
         <div v-if="show">
             <div v-if="val">
-                <div v-if="error" class="error" @click="reset">{{error}}</div>
-                <button v-if="!error" @click="redirect">{{redirect_text}}</button>
+                <div v-if="error" class="error" @click="reset">{{ error }}</div>
+                <button v-if="!error" @click="redirect">
+                    {{ redirect_text }}
+                </button>
             </div>
             <div v-else class="limited">
                 <qrcode-stream @decode="onDecode"></qrcode-stream>
@@ -20,27 +23,27 @@ if (!settings) {
     settings = {
         btn_text: "Read QR",
         error: "$error_text",
-        redirect_text: "$redirect_text"
+        redirect_text: "$redirect_text",
     };
 }
 
 export default {
     name: "App",
     components: {
-        QrcodeStream
+        QrcodeStream,
     },
     props: {
         text: {
             type: String,
-            default: settings.btn_text
-        }
+            default: settings.btn_text,
+        },
     },
     data() {
         return {
             show: false,
             val: "",
             error: "",
-            redirect_text: settings.redirect_text
+            redirect_text: settings.redirect_text,
         };
     },
     methods: {
@@ -71,8 +74,8 @@ export default {
             } else {
                 this.resetAll();
             }
-        }
-    }
+        },
+    },
 };
 </script>
 <style scoped>

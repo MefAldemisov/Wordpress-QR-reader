@@ -2,8 +2,8 @@
 if ($_POST['qr_reader_hidden'] == 'Y') {
     //Form data sent
     $db_btn_text = $_POST['qr_reader_btn_text'];
-    $error_text =  $_POST['qr_reader_error_text'];
-    $redirect_text = $_POST['qr_reader_redirect_text'];
+    $db_error_text =  $_POST['qr_reader_error_text'];
+    $db_redirect_text = $_POST['qr_reader_redirect_text'];
 
     update_option('qr_reader_btn_text', $db_btn_text);
     update_option('qr_reader_error_text', $error_text);
@@ -16,9 +16,9 @@ if ($_POST['qr_reader_hidden'] == 'Y') {
 <?php
 } else {
     //Normal page display
-    $db_btn_text = get_option('qr_reader_btn_text');
-    $db_error_text = get_option('qr_reader_error_text');
-    $db_redirect_text = get_option('qr_reader_redirect_text');
+    $db_btn_text = get_option('qr_reader_btn_text', 'Отсканировать QR-код');
+    $db_error_text = get_option('qr_reader_error_text', 'Ошибка: Данный QR код не содержит URL');
+    $db_redirect_text = get_option('qr_reader_redirect_text', 'Перейти');
 }
 ?>
 
